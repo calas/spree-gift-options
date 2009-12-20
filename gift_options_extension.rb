@@ -25,14 +25,28 @@ class GiftOptionsExtension < Spree::Extension
 
     Order.class_eval do
       has_one :gift_message
-      accepts_nested_attributes_for :gift_message
     end
 
     Checkout.class_eval do
-      validation_group :giftopts, :fields => []
+      validation_group :giftopts, :fields => ["gift_message.body"]
 
-      has_one :gift_message, :through => :order
+      has_one :gift_message, :through => :order, :source => :gift_message
       accepts_nested_attributes_for :gift_message
+
+      def gift_message
+        order.gift_message || GiftMessage.new(:order => order)
+      end
+
+      def gift_message_attributes=(attrs)
+        message = gift_message
+        message.update_attributes(attrs)
+        message.save
+      end
+
+      # def gift_message=(params)
+      #   message = gift_message
+      #   message.update_attributes(params)
+      # end
 
       def gift_options=(options)
         order.line_items.each do |line_item|
@@ -60,7 +74,6 @@ class GiftOptionsExtension < Spree::Extension
 
       def load_gift_options
         @gift_options = GiftOption.find(:all, :include => :gift_choices)
-        @checkout.gift_message ||= GiftMessage.new(:order => @order)
       end
 
       def set_gift_options
