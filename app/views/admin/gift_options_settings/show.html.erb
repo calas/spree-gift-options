@@ -1,0 +1,15 @@
+<h1><%= t('gift_options_settings') %></h1>
+
+<% form_tag(admin_gift_options_settings_path, :method => :put) do -%>
+  <p>
+    <label>
+    <%= hidden_field_tag('preferences[message_in_all_orders]', 0) %>
+    <%= check_box_tag('preferences[message_in_all_orders]', "1", GiftOptions::Config[:message_in_all_orders]) %>
+    <%= t("enable_card_message_in_all_orders") %>
+    </label>
+  </p>
+  <p class="form-buttons">
+    <%= button t('update') %>
+  </p>
+<% end -%>
+

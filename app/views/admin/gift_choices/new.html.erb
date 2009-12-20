@@ -1,0 +1,12 @@
+<%= render 'admin/shared/gift_option_tabs', :current => "Gift Choices" %>
+
+<h2><%= t("new_gift_choice")%></h2>
+
+<%= error_messages_for :gift_choice %>
+
+<% form_for object, :url => collection_url, :html => { :multipart => true } do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+  <p class="form-buttons">
+    <%= render :partial => 'admin/shared/new_resource_links' %>
+  </p>
+<% end %>

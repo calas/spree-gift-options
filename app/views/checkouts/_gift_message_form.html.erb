@@ -1,0 +1,19 @@
+<% checkout_form.fields_for :gift_message do |message_form| %>
+<fieldset>
+  <legend><%= t('write_gift_message') %></legend>
+  <div class="inner">
+    <p class="field">
+      <%= message_form.label :to %><br />
+      <%= message_form.text_field :to %>
+    </p>
+    <p class="field">
+      <%= message_form.label :from %><br />
+      <%= message_form.text_field :from %>
+    </p>
+    <p class="field">
+      <%= message_form.label :body %><br />
+      <%= message_form.text_area :body, :cols => 80, :rows => 4 %>
+    </p>
+  </div>
+</fieldset>
+<% end -%>

@@ -1,0 +1,29 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_gift_option"), new_object_url, :icon => 'add' %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t('gift_options') %></h1>
+
+<table class="index">
+  <tr>
+    <th><%= t("name") %></th>
+    <th><%= t("gift_choices") %></th>
+    <th></th>
+  </tr>
+  <% @gift_options.each do |gift_option| %>
+    <tr id="<%= dom_id(gift_option) %>">
+      <td><%= gift_option.name %></td>
+      <td><%= gift_option.gift_choices.count %></td>
+      <td class="actions">
+        <%= link_to_edit gift_option %>
+        &nbsp;
+        <%= link_to_delete gift_option %>
+      </td>
+    </tr>
+  <% end %>
+</table>

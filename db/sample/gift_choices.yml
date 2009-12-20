@@ -1,0 +1,69 @@
+--- 
+gift_choices_10: 
+  amount: "3.35"
+  created_at: 2009-12-19 21:35:37
+  description: "Ideal for birthday presents. "
+  gift_option_id: "1"
+  id: "10"
+  image_content_type: image/jpeg
+  image_file_name: birthdaypresents.jpg
+  image_file_size: "78731"
+  image_updated_at: 2009-12-19 23:16:09
+  name: Birthday Presents
+  updated_at: 2009-12-19 23:16:09
+gift_choices_12: 
+  amount: "2.50"
+  created_at: 2009-12-19 23:00:43
+  description: |
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Nam vestibulum accumsan nisl.
+
+  gift_option_id: "2"
+  id: "12"
+  image_content_type: image/jpeg
+  image_file_name: giftbag31.jpg
+  image_file_size: "14748"
+  image_updated_at: 2009-12-19 23:04:02
+  name: GB00023
+  updated_at: 2009-12-19 23:04:02
+gift_choices_13: 
+  amount: "2.99"
+  created_at: 2009-12-19 23:12:26
+  description: |
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia purus, et dictum nunc justo sit amet elit.  Pellentesque tristique imperdiet tortor.
+
+  gift_option_id: "2"
+  id: "13"
+  image_content_type: image/gif
+  image_file_name: brown-craft-paper-gift-bags.gif
+  image_file_size: "108419"
+  image_updated_at: 2009-12-19 23:12:26
+  name: GB00024
+  updated_at: 2009-12-19 23:12:26
+gift_choices_14: 
+  amount: "4.50"
+  created_at: 2009-12-19 23:14:57
+  description: |
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  In id erat non orci commodo lobortis.
+
+  gift_option_id: "1"
+  id: "14"
+  image_content_type: image/jpeg
+  image_file_name: Gift_Wrapping_Paper.jpg
+  image_file_size: "36181"
+  image_updated_at: 2009-12-19 23:16:26
+  name: GW02096
+  updated_at: 2009-12-19 23:16:26
+gift_choices_15: 
+  amount: "3.99"
+  created_at: 2009-12-19 23:17:16
+  description: |
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Nam euismod tellus id erat.  Nullam libero mauris, consequat quis, varius et, dictum id, arcu.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+  gift_option_id: "1"
+  id: "15"
+  image_content_type: image/jpeg
+  image_file_name: C54672.jpg
+  image_file_size: "95838"
+  image_updated_at: 2009-12-19 23:17:16
+  name: GW02120
+  updated_at: 2009-12-19 23:17:16

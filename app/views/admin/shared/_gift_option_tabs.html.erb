@@ -1,0 +1,18 @@
+<h1><%= t("editing_gift_option") + " &ldquo;#{@gift_option.name}&rdquo;" %></h1>
+
+<% content_for :sidebar do %>
+
+  <h3 class="name"><%= @gift_option.name %></h3>
+  <br clear="clear" />
+
+  <ul class="sidebar gift-option-menu">
+    <li <%= 'class="active"' if current == "Gift Option Details" %>>
+      <%= link_to t("gift_option_details"), edit_admin_gift_option_url(@gift_option) %>
+    </li>
+    <li <%= 'class="active"' if current == "Gift Choices" %>>
+      <%= link_to t("gift_choices"), admin_gift_option_gift_choices_url(@gift_option) %>
+    </li>
+  </ul>
+  <br clear="clear" />
+
+<% end %>

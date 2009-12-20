@@ -1,0 +1,23 @@
+<% f.field_container :name do %>
+  <%= f.label :name, t("name")%> <span class="required">*</span><br />
+  <%= f.text_field :name %>
+  <%= f.error_message_on :name %>
+<% end %>
+
+<% f.field_container :amount do %>
+  <%= f.label :amount, t("amount")%> <span class="required">*</span><br />
+  <%= f.text_field :amount %>
+  <%= f.error_message_on :amount %>
+<% end %>
+
+<% f.field_container :image do %>
+  <%= f.label :image, t("image")%><br />
+  <%= f.file_field :image %>
+  <%= f.error_message_on :image %>
+<% end %>
+
+<% f.field_container :description do %>
+  <%= f.label :description, t("description")%> <br />
+  <%= f.text_area :description, {:style=> "height:100px;", :class => 'fullwidth'} %>
+  <%= f.error_message_on :description %>
+<% end %>

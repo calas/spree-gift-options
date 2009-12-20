@@ -1,0 +1,33 @@
+<%= render 'admin/shared/gift_option_tabs', :current => "Gift Choices" %>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_gift_choice"), new_object_url, :icon => 'add' %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<table id="gift-choices" class="index">
+  <tr>
+    <th><%= t("image") %></th>
+    <th><%= t("name") %></th>
+    <th><%= t("description") %></th>
+    <th><%= t("amount") %></th>
+    <th></th>
+  </tr>
+  <% @gift_choices.each do |choice| %>
+  <tr id="<%= dom_id(choice) %>">
+    <td><%= image_tag(choice.image.url) %></td>
+    <td><%= choice.name %></td>
+    <td><%= choice.description %></td>
+    <td class="amount"><%= number_to_currency(choice.amount) %></td>
+    <td>
+      <%= link_to_edit choice %>
+      &nbsp;
+      <%= link_to_delete choice %>
+    </td>
+  </tr>
+  <% end %>
+</table>

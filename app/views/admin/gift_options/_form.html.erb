@@ -1,0 +1,12 @@
+<% f.field_container :name do %>
+  <%= f.label :name, t("name")%> <span class="required">*</span><br />
+  <%= f.text_field :name %>
+  <%= f.error_message_on :name %>
+<% end %>
+
+<% f.field_container :description do %>
+  <%= f.label :description, t("description")%> <span class="required">*</span><br />
+  <%= f.text_area :description, {:style=> "height:100px;", :class => 'fullwidth'} %>
+  <%= f.error_message_on :description %>
+<% end %>
+
