@@ -21,6 +21,6 @@ class GiftOptionsHooks < Spree::ThemeSupport::HookListener
     "<%= tab(:gift_options, :gift_options_settings) %>"
   end
 
-  insert_after :cart_item_description, 'shared/gift_option_available'
-  insert_after :product_description, 'shared/gift_option_available'
+  replace :gift_options_available, 'shared/gift_option_available'
+  #insert_after :product_description, 'shared/gift_option_available'
 end
