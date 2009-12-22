@@ -8,18 +8,19 @@
           <p class="field">
             <%= item.variant.product.name %> 
             <ul class="gift-options-list">
-      	      <li>
-      		      <strong>Don't want gift Options</strong>
-      	      </li>
               <% @gift_options.each do |gift_option| -%>
                 <li class="gift-option-item">
               		<h4><%= gift_option.name %></h4>
               		<ul>
+            	      <li>
+            	        <%= gift_item.radio_button :choice_id, nil %>
+            	        <p>None</p>
+            	      </li>
               		  <% gift_option.gift_choices.each do |choice| -%>
               		    <li>
               		      <%= gift_item.radio_button :choice_id, choice.id %>
+              		      <p><%= choice.name %></p>
               		      <%= image_tag(choice.image.url) %>
-              		      <strong><%= choice.name %></strong>
               		    </li>
               		  <% end -%>
               		</ul>
