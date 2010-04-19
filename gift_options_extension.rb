@@ -16,6 +16,13 @@ class GiftOptionsExtension < Spree::Extension
 
     Order.class_eval do
       has_one :gift_message
+      
+      def possible_gift_options
+        products = line_items.map{|li| li.variant.product}
+        GiftOption.find(:all, :include => :gift_choices).select do |gift_option|
+          products.all?{|p| gift_option.valid_for_product?(p)}
+        end
+      end
     end
 
     Checkout.class_eval do
