@@ -1,0 +1,14 @@
+<table>
+	<tr>
+    <td><%=t("gift_option")%>:</td>
+    <td><%= f.collection_select :gift_option_id, GiftOption.all, :id, :name, {:include_blank => true} %></td>
+  </tr>
+	<tr>
+    <td><%=t("product_group")%>:</td>
+    <td><%= f.collection_select :product_group_id, ProductGroup.all, :id, :name, {:include_blank => true} %></td>
+  </tr>
+	<tr>
+    <td><%=t("product")%> (<%=t("sku")%>):</td>
+    <td><%= f.text_field :product_sku %></td>
+  </tr>
+</table>

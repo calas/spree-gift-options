@@ -5,4 +5,5 @@ map.namespace :admin do |admin|
     gift_option.resources :gift_choices
   end
   admin.resource :gift_options_settings
+  admin.resources :gift_restrictions
 end

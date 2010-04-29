@@ -1,0 +1,34 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_gift_restriction"), new_object_url, :icon => 'add'  %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("gift_restrictions") %></h1>
+
+<table class="index">
+  <thead>
+    <th><%= t("gift_option") %></th>
+    <th><%= t("product") %></th>
+    <th><%= t("product_group") %></th>
+    <th><%= t("action") %></th>
+  </thead>
+  <tbody>
+    <% @gift_restrictions.each do |restriction|%>
+    <tr id="<%= dom_id restriction %>">
+      <td><%= restriction.gift_option.try(:name) %></td>
+      <td><%= restriction.product.try(:name) %></td>
+      <td><%= restriction.product_group.try(:name) %></td>      
+      <td>
+      	<%= link_to_edit restriction %> &nbsp;
+      	<%= link_to_delete restriction %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+      

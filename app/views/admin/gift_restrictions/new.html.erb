@@ -1,0 +1,10 @@
+<h1><%= t("new_gift_restriction") %></h1>
+
+<%= error_messages_for :gift_restriction %>
+
+<% form_for(:gift_restriction, :url => collection_url) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <p>
+    <%= submit_tag t("create") %>
+  </p>
+<% end %>
