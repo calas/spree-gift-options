@@ -10,8 +10,4 @@
   <%= f.error_message_on :description %>
 <% end %>
 
-<% f.field_container :product_group do %>
-  <%= f.label :product_group_id, t("product_group")%><br />
-  <%= f.collection_select :product_group_id, ProductGroup.all, :id, :name, :include_blank => true %>
-<% end %>
 

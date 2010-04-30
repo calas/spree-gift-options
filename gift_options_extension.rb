@@ -56,6 +56,13 @@ class GiftOptionsExtension < Spree::Extension
         end
       end
     end
+    
+    Product.class_eval do
+      def gift_options
+        GiftOption.all.select { |option| option.valid_for_product?(self)  }
+      end
+      
+    end
 
     LineItem.class_eval do
       has_many :line_item_gift_choices, :dependent => :destroy

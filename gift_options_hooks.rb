@@ -22,5 +22,4 @@ class GiftOptionsHooks < Spree::ThemeSupport::HookListener
   end
 
   replace :gift_options_available, 'shared/gift_option_available'
-  insert_after :admin_configurations_menu, "admin/gift_restrictions/admin_link"
 end

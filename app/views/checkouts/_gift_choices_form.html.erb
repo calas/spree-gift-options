@@ -5,9 +5,9 @@
     <div id="options">
       <% @order.line_items.each do |item| -%>
 
-        <% gift_options =  GiftOption.for_product(item.variant.product) -%>
-        <% if gift_options.any? %>
-        
+        <% gift_options =  item.variant.product.gift_options -%>
+        <% if gift_options.present? %>
+
           <% gift_opts_form.fields_for "line_items[#{item.id}]" do |gift_item| -%>
             <p class="field">
               <%= item.variant.product.name %> 
@@ -31,10 +31,10 @@
                   </li>
                 <% end -%>
               </ul>
-            </p>
-          <% end -%>
+            </p>          
+          <% end %>
 
-        <% end %>
+        <% end -%>
 
       <% end -%>
     </div>
